@@ -4458,6 +4458,11 @@ function getDocument(src) {
   if (typeof params.disableAutoFetch !== "boolean") {
     params.disableAutoFetch = false;
   }
+
+  // Display non-ASCII characters.
+  params.cMapUrl = "/js/pdf-js/web/cmaps/";
+  params.cMapPacked = true;
+
   (0, _util.setVerbosityLevel)(params.verbosity);
   if (!worker) {
     const workerParams = {
